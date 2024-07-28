@@ -26,7 +26,7 @@ const Search = () => {
         fontWeight="bold"
         // color="#ffeba7"
         color="#1DA1F2"
-        sx={{ mb: "30px", textAlign: "center", fontSize: "30px" }}
+        sx={{ mb: "30px", textAlign: "center", fontSize: "30px", top:"10%" }}
       >
         Search For Images
       </Typography>
@@ -44,7 +44,7 @@ const Search = () => {
         </SearchContainer>
       </SearchBox>
 
-      <Box mt={8} style={{ boxShadow: "0 4px 10px rgba(0,0,0,0.2)"}}>
+      <Box mt={12} style={{ boxShadow: "0 4px 10px rgba(0,0,0,0.2)", }}>
         {images.length > 0 && (
           <Box sx={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))", gap: 2}}>
             {images.map((image) => (

@@ -6,12 +6,12 @@ export const SearchBox = styled.div`
   display: flex;
   align-items: center;
   position: absolute;
-    top: 26%;
+    top: 30%;
     left: 50%;
     transform: translate(-50%, -50%);
   @media screen and (max-width: 786px) {
     position: absolute;
-    top: 10%;
+    top: 15%;
     left: 50%;
     transform: translate(-50%, -50%);
     // width: 100px;
