@@ -1,5 +1,5 @@
 import { Box, Typography } from "@mui/material";
-import { SearchBox, SearchContainer } from "./Searchmodule";
+// import { SearchBox, SearchContainer } from "./Searchmodule";
 import { IconButton, InputBase } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import axios from "axios";
@@ -22,6 +22,7 @@ const Search = () => {
 
   return (
     <Box>
+      
       <Typography
         fontWeight="bold"
         // color="#ffeba7"
@@ -30,7 +31,8 @@ const Search = () => {
       >
         Search For Images
       </Typography>
-      <SearchBox className="search-box">
+      
+      {/* <SearchBox className="search-box">
         <SearchContainer>
           <InputBase
             sx={{ ml: 2, flex: 1, color: "#ffeba7" }}
@@ -42,7 +44,20 @@ const Search = () => {
             <SearchIcon />
           </IconButton>
         </SearchContainer>
-      </SearchBox>
+      </SearchBox> */}
+       <Box className="search-box">
+        <Box sx={{ display: 'flex', alignItems: 'center', border: '1px solid #1DA1F2', borderRadius: '8px', p: 1 }}>
+          <InputBase
+            sx={{ ml: 2, flex: 1, color: "#000" }}
+            placeholder="Search"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+          />
+          <IconButton type="button" sx={{ p: 1 }} onClick={handleSearch}>
+            <SearchIcon />
+          </IconButton>
+        </Box>
+      </Box>
 
       <Box mt={12} style={{ boxShadow: "0 4px 10px rgba(0,0,0,0.2)", }}>
         {images.length > 0 && (
