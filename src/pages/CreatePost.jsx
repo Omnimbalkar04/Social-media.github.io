@@ -37,7 +37,7 @@ const CreatePost = () => {
       setLoading(false);
       resetForm();
       alert("Your Post Details is submitted");
-      navigate("/");
+      navigate("/Social-media.github.io/");
     }, 2000);
   }
 

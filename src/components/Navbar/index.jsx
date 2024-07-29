@@ -35,11 +35,11 @@ const Navbar = () => {
     <>
     
       <Nav className="nav">
-        <Logo to="/" >TrendWave</Logo>
+        <Logo to="/Social-media.github.io/" >TrendWave</Logo>
         <Bars className="bar" onClick={toggleSidebar} />
         <NavMenu className="navmenu">
           <Tooltip title="Home">
-          <NavLink className="link" to="/">
+          <NavLink className="link" to="/Social-media.github.io/">
             <HomeOutlinedIcon />
           </NavLink>
           </Tooltip>
@@ -83,7 +83,7 @@ const Navbar = () => {
 
       <Sidebar isOpen={sidebar}>
         <SidebarClose onClick={toggleSidebar}>&times;</SidebarClose>
-        <SidebarLink to="/" onClick={toggleSidebar}>
+        <SidebarLink to="/Social-media.github.io/" onClick={toggleSidebar}>
           {" "}
           Home
         </SidebarLink>

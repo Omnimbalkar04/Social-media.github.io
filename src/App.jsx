@@ -20,7 +20,7 @@ function App() {
       <Navbar />
       
       <Routes>
-        <Route path='/' element={<Home />} />
+        <Route path='/Social-media.github.io/' element={<Home />} />
         <Route path='/create' element={<CreatePost />} />
         <Route path='/search' element={<Search/>} />
         <Route path='/signup' element={<Signup />} />
