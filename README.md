@@ -1,8 +1,8 @@
-# React + Vite
+TRENDWAVE..!
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This App is type of social media app. This app is developed in the "React + Vite" and used two different Api's for showing the Posts and provide the Images the user wants.
 
-Currently, two official plugins are available:
+And developer also use the "Material UI" for the better user experience. In TRENDWAVE, Along with Api posts User can create their own Posts in create post section.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The TRENDWAVE app is fully responsive and run in any type of device and Adapt their screen size.
+
