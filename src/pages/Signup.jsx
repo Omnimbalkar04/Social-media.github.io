@@ -8,6 +8,7 @@ import { useState } from "react";
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import MailOutlinedIcon from '@mui/icons-material/MailOutlined';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
+import PhotoCameraOutlinedIcon from '@mui/icons-material/PhotoCameraOutlined';
 
 // Initial Values
 const initialValues = {
@@ -16,6 +17,7 @@ const initialValues = {
   email: "",
   password: "",
   confirmPassword: "",
+  profilePicture: null,
 };
 
 // User schema: Use for validation by using yup
@@ -31,6 +33,7 @@ const userSchema = yup.object().shape({
     .string()
     .required("required")
     .oneOf([yup.ref("password"), null], "Passwords must match"),
+  profilePicture: yup.mixed().required("A Profile picture is required"),
 });
 
 const Signup = () => {
@@ -81,8 +84,9 @@ const Signup = () => {
           touched,
           handleBlur,
           handleChange,
+          setFieldValue,
           handleSubmit,
-          resetForm,
+          // resetForm,
         }) => (
           <form onSubmit={handleSubmit}>
             <Box
@@ -293,6 +297,44 @@ const Signup = () => {
                   aria-label="Confirm Password"
                 />
               </Box>
+
+              <Box
+               sx={{
+                gridColumn: "span 4",
+                display: "flex",
+                alignItems: "center",
+                backgroundColor: "#f0f2f5", // Light Grey
+                borderRadius: "8px",
+                padding: "10px",
+              }}
+              >
+                <PhotoCameraOutlinedIcon 
+                style={{ color: "#1DA1F2", marginRight: "8px" }}
+                />
+                <input
+                accept="image/*"
+                style={{ display: "none" }}
+                id="upload-profile-picture"
+                type="file"
+                onChange={ (event) => {
+                  setFieldValue("profilePicture", event.currentTarget.files[0]);
+                }}
+                 />
+                 <label 
+                 htmlFor="upload-profile-picture"
+                 >
+                  <Box
+                   type="submit"
+                   variant="contained"
+                   color="primary"
+                   sx={{ color: "#ffffff", backgroundColor: "#1DA1F2" }} 
+                   component="span"
+                  >
+                    Upload Photo
+                  </Box>
+                 </label>
+              </Box>
+
             </Box>
             <Box display="flex" justifyContent="end" mt="20px">
               <Button
