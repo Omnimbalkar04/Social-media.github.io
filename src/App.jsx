@@ -6,15 +6,17 @@ import Navbar from "./components/Navbar";
 import Home from "./pages/Home"
 import CreatePost from "./pages/CreatePost"
 import Signup from "./pages/Signup"
-import SignIn from './pages/SignIn';
 import { PostProvider } from './pages/PostContext';
+import { UserProvider } from './pages/UserContext';
 import Search from './pages/Search';
+import Profile from './pages/Profile';
 
 function App() {
   
 
   return (
     <>
+    <UserProvider>
     <PostProvider>
      <Router>
       <Navbar />
@@ -24,11 +26,12 @@ function App() {
         <Route path='/create' element={<CreatePost />} />
         <Route path='/search' element={<Search/>} />
         <Route path='/signup' element={<Signup />} />
-        <Route path='/signin' element={<SignIn />} />
+        <Route path='/profile' element={<Profile/>} />
       </Routes>
       
      </Router>
      </PostProvider>
+     </UserProvider>
     </>
   )
 }

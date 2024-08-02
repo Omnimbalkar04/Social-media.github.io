@@ -5,6 +5,8 @@ import { Formik } from "formik";
 import * as yup from "yup";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useState } from "react";
+import { useUser } from "./UserContext";
+import { useNavigate } from "react-router-dom";
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import MailOutlinedIcon from '@mui/icons-material/MailOutlined';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
@@ -39,14 +41,19 @@ const userSchema = yup.object().shape({
 const Signup = () => {
   const isNonMobile = useMediaQuery("(min-width: 600px)");
   const [loading, setLoading] = useState(false);
+  const { setUser } = useUser();
+  const navigate = useNavigate();
 
   const handleFormSubmit = (values, { resetForm }) => {
     setLoading(true);
     setTimeout(() => {
+
+      setUser(values);
       console.log(values);
       setLoading(false);
       resetForm();
       alert("Login Details is submitted");
+      navigate("/profile");
     }, 2000);
   };
 
@@ -316,8 +323,8 @@ const Signup = () => {
                 style={{ display: "none" }}
                 id="upload-profile-picture"
                 type="file"
-                onChange={ (event) => {
-                  setFieldValue("profilePicture", event.currentTarget.files[0]);
+                onChange={ (event) =>{ 
+                  setFieldValue("profilePicture", event.currentTarget.files[0])
                 }}
                  />
                  <label 

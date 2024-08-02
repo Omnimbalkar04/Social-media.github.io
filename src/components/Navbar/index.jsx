@@ -70,9 +70,9 @@ const Navbar = () => {
           </SearchContainer>
         </SearchBox> */}
 
-        <NavBtn className="btn">
+        <NavBtn className="btn" >
         <Tooltip title="User">
-          <NavBtnLink className="btnlink" to="/signin">
+          <NavBtnLink className="btnlink" to="/profile" >
             <AccountCircleOutlinedIcon
             style={{ fontSize: "25px"  }}
              />
@@ -98,6 +98,10 @@ const Navbar = () => {
         <hr width="100% " />
         <SidebarLink to="/signup" onClick={toggleSidebar}>
           Signup
+        </SidebarLink>
+        <hr width="100% " />
+        <SidebarLink to="/profile" onClick={toggleSidebar}>
+          Profile
         </SidebarLink>
         <hr width="100% " />
       </Sidebar>
