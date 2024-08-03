@@ -40,7 +40,7 @@ const Home = () => {
         allPosts.map((post, index) => (
           <Card
             key={index}
-            sx={{ mb: "20px", backgroundColor: "hsla(240, 7%, 17%, 0.647)", boxShadow: "0 4px 10px rgba(0,0,0,0.2)" }}
+            sx={{ mb: "20px", backgroundColor: "#fafafa", boxShadow: "0 4px 10px rgba(0,0,0,0.2)" }}
             
           >
             <CardContent>
@@ -54,7 +54,7 @@ const Home = () => {
                   style={{ color: "#ffeba7", marginRight: "8px" }}
                 />
                 <Typography
-                  sx={{ fontSize: 16, color: "#ffeba7" }}
+                  sx={{ fontSize: 16, }}
                   gutterBottom
                 >
                   {" "}
@@ -71,7 +71,7 @@ const Home = () => {
                 <Typography
                   variant="h4"
                   component="div"
-                  sx={{ color: "aliceblue" }}
+                  // sx={{ color: "aliceblue" }}
                 >
                   {" "}
                   {post.title || post.postTitle}
@@ -84,7 +84,9 @@ const Home = () => {
                   alignItems: "center",
                 }}
               >
-                <Typography variant="body3" sx={{ color: "aliceblue" }}>
+                <Typography variant="body3"
+                //  sx={{ color: "aliceblue" }}
+                 >
                   {post.body ||  post.postContent}
                 </Typography>
               </Box>
@@ -97,7 +99,8 @@ const Home = () => {
                   alignItems: "center",
                 }}
               >
-                <Typography sx={{ mt: 1.5, color: "#ffeba7" }}>
+                <Typography color="textSecondary"
+                 sx={{ mt: 1.5,  }}>
                   Tags: {post.tags}
                 </Typography>
               </Box>

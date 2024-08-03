@@ -61,7 +61,7 @@ const Signup = () => {
     <Box
       m="20px"
       sx={{
-        backgroundColor: "#ffffff",
+        backgroundColor: "#fafafa",
         // backgroundColor: "hsla(240, 7%, 17%, 0.647)",
         borderRadius: "8px",
         padding: "40px 20px",

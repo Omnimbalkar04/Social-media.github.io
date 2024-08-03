@@ -3,10 +3,8 @@ import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import AddCircleOutlineOutlinedIcon from "@mui/icons-material/AddCircleOutlineOutlined";
 // import LoginOutlinedIcon from "@mui/icons-material/LoginOutlined";
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
-
 import SearchIcon from "@mui/icons-material/Search";
-
-
+import { useUser } from "../../pages/UserContext";
 import {
   Nav,
   NavLink,
@@ -21,11 +19,12 @@ import {
   // SearchBox,
   // SearchContainer
 } from "./navbarElements";
-import { Tooltip } from "@mui/material";
+import { Avatar, Tooltip } from "@mui/material";
 // import { IconButton, InputBase } from "@mui/material";
 
 const Navbar = () => {
   const [sidebar, setSidebar] = useState(false);
+  const { user } = useUser();
 
   const toggleSidebar = () => {
     setSidebar(!sidebar);
@@ -73,9 +72,17 @@ const Navbar = () => {
         <NavBtn className="btn" >
         <Tooltip title="User">
           <NavBtnLink className="btnlink" to="/profile" >
-            <AccountCircleOutlinedIcon
+          { user && user.profilePicture ? (
+            <Avatar
+            src={URL.createObjectURL(user.profilePicture)} 
+            style={{ width:"30px" , height:"30px" }}
+            />
+            ) : (
+              <AccountCircleOutlinedIcon
             style={{ fontSize: "25px"  }}
              />
+             )
+            }
           </NavBtnLink>
           </Tooltip>
         </NavBtn>

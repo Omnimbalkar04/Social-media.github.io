@@ -37,28 +37,16 @@ const Search = () => {
         fontWeight="bold"
         // color="#ffeba7"
         color="#1DA1F2"
-        sx={{ mb: "30px", textAlign: "center", fontSize: "30px", top:"10%" }}
+        sx={{ mb: "30px", textAlign: "center", fontSize: "30px", top:"10%",}}
       >
         Search For Images
       </Typography>
       
-      {/* <SearchBox className="search-box">
-        <SearchContainer>
-          <InputBase
-            sx={{ ml: 2, flex: 1, color: "#ffeba7" }}
-            placeholder="Search"
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-          />
-          <IconButton type="button" sx={{ p: 1 }} onClick={handleSearch}>
-            <SearchIcon />
-          </IconButton>
-        </SearchContainer>
-      </SearchBox> */}
+   
        <Box className="search-box">
-        <Box sx={{ display: 'flex', alignItems: 'center', border: '3px solid #1DA1F2', borderRadius: '8px', p: 1 }}>
+        <Box sx={{ display: 'flex', alignItems: 'center', border: '3px solid #1DA1F2', borderRadius: '8px', p: 1, m:"20px",background:"#fafafa", boxShadow: "0 4px 10px rgba(0,0,0,0.3)" }}>
           <InputBase
-            sx={{ ml: 2, flex: 1, color: "#000" }}
+            sx={{ ml: 2, flex: 1, color: "#000",  }}
             placeholder="Search"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
