@@ -2,7 +2,10 @@ import { useState } from "react";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import AddCircleOutlineOutlinedIcon from "@mui/icons-material/AddCircleOutlineOutlined";
 // import LoginOutlinedIcon from "@mui/icons-material/LoginOutlined";
-import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
+// import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
+import NotificationsIcon from '@mui/icons-material/Notifications';
+import PersonAddIcon from '@mui/icons-material/PersonAdd';
+import FaceIcon from '@mui/icons-material/Face';
 import SearchIcon from "@mui/icons-material/Search";
 import { useUser } from "../../pages/UserContext";
 import {
@@ -55,7 +58,13 @@ const Navbar = () => {
           
           <Tooltip title="Create Account">
           <NavLink className="link" to="/signup">
-            Signup
+            <PersonAddIcon />
+          </NavLink>
+          </Tooltip>
+
+          <Tooltip title="Notifications">
+          <NavLink className="link" to="">
+            <NotificationsIcon />
           </NavLink>
           </Tooltip>
         </NavMenu>
@@ -78,7 +87,7 @@ const Navbar = () => {
             style={{ width:"30px" , height:"30px" }}
             />
             ) : (
-              <AccountCircleOutlinedIcon
+              <FaceIcon
             style={{ fontSize: "25px"  }}
              />
              )

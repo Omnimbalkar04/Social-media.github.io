@@ -84,6 +84,9 @@ const Profile = () => {
             <Typography variant="body2" color="textSecondary">
               {user.email}
             </Typography>
+            <Typography variant="h6" color="textSecondary">
+              {user.bio}
+            </Typography>
           </Box>
         </Box>
 

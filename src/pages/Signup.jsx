@@ -11,6 +11,7 @@ import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined
 import MailOutlinedIcon from '@mui/icons-material/MailOutlined';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import PhotoCameraOutlinedIcon from '@mui/icons-material/PhotoCameraOutlined';
+import CreateIcon from '@mui/icons-material/Create';
 
 // Initial Values
 const initialValues = {
@@ -19,6 +20,7 @@ const initialValues = {
   email: "",
   password: "",
   confirmPassword: "",
+  bio:"",
   profilePicture: null,
 };
 
@@ -35,6 +37,7 @@ const userSchema = yup.object().shape({
     .string()
     .required("required")
     .oneOf([yup.ref("password"), null], "Passwords must match"),
+    bio: yup.string().required("required"),
   profilePicture: yup.mixed().required("A Profile picture is required"),
 });
 
@@ -195,6 +198,46 @@ const Signup = () => {
                   padding: "10px",
                 }}
               >
+                <CreateIcon
+                // style={{ color: "#ffeba7", marginRight: "8px" }} 
+                style={{ color: "#1DA1F2", marginRight: "8px" }}
+                />
+                <TextField
+                  fullWidth
+                  variant="filled"
+                  type="text"
+                  label="Bio"
+                  onBlur={handleBlur}
+                  onChange={handleChange}
+                  value={values.bio}
+                  name="bio"
+                  error={!!touched.bio && !!errors.bio}
+                  helperText={touched.bio && errors.bio}
+                  InputProps={{
+                    style: { color: "#000000" },
+                    // style: { color: "aliceblue" },
+                    sx: {
+                      borderRadius: "8px",
+                    },
+                  }}
+                  InputLabelProps={{
+                    style: { color: "#1DA1F2" },
+                    // style: { color: "#ffeba7" },
+                  }}
+                  aria-label="Bio"
+                />
+              </Box>
+
+              <Box
+                sx={{
+                  gridColumn: "span 4",
+                  display: "flex",
+                  alignItems: "center",
+                  backgroundColor: "#f0f2f5", // Light Grey
+                  borderRadius: "8px",
+                  padding: "10px",
+                }}
+              >
                 <MailOutlinedIcon 
                 // style={{ color: "#ffeba7", marginRight: "8px" }} 
                 style={{ color: "#1DA1F2", marginRight: "8px" }}
@@ -304,6 +347,8 @@ const Signup = () => {
                   aria-label="Confirm Password"
                 />
               </Box>
+
+         
 
               <Box
                sx={{

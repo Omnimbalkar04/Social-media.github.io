@@ -23,7 +23,9 @@ const Home = () => {
   const allPosts = [...userPosts, ...apiPosts];
 
   return (
-    <Box m="20px">
+    <Box m="20px"
+    >
+      
       {allPosts.length === 0 ? (
         <Typography
           fontWeight="bold"
@@ -33,10 +35,12 @@ const Home = () => {
             textAlign: "center",
             fontSize: "24px",
           }}
+          
         >
           No Posts Available
         </Typography>
       ) : (
+        
         allPosts.map((post, index) => (
           <Card
             key={index}
@@ -109,6 +113,8 @@ const Home = () => {
           </Card>
         ))
       )}
+
+    
     </Box>
   );
 };
