@@ -6,6 +6,7 @@ import Navbar from "./components/Navbar";
 import Home from "./pages/Home"
 import CreatePost from "./pages/CreatePost"
 import Signup from "./pages/Signup"
+import Notification from "./pages/Notification"
 import { PostProvider } from './pages/PostContext';
 import { UserProvider } from './pages/UserContext';
 import Search from './pages/Search';
@@ -26,6 +27,7 @@ function App() {
         <Route path='/create' element={<CreatePost />} />
         <Route path='/search' element={<Search/>} />
         <Route path='/signup' element={<Signup />} />
+        <Route path='/notification' element={<Notification />} />
         <Route path='/profile' element={<Profile/>} />
       </Routes>
       

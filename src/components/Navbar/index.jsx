@@ -37,7 +37,7 @@ const Navbar = () => {
     <>
     
       <Nav className="nav">
-        <Logo to="/Social-media.github.io/" >TrendWave</Logo>
+        <Logo to="/Social-media.github.io/"  >TrendWave</Logo>
         <Bars className="bar" onClick={toggleSidebar} />
         <NavMenu className="navmenu">
           <Tooltip title="Home">
@@ -63,7 +63,7 @@ const Navbar = () => {
           </Tooltip>
 
           <Tooltip title="Notifications">
-          <NavLink className="link" to="">
+          <NavLink className="link" to="/notification">
             <NotificationsIcon />
           </NavLink>
           </Tooltip>
@@ -84,7 +84,7 @@ const Navbar = () => {
           { user && user.profilePicture ? (
             <Avatar
             src={URL.createObjectURL(user.profilePicture)} 
-            style={{ width:"30px" , height:"30px" }}
+            style={{ width:"35px" , height:"35px" }}
             />
             ) : (
               <FaceIcon

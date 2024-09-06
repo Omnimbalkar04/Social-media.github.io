@@ -44,7 +44,7 @@ const Search = () => {
       
    
        <Box className="search-box">
-        <Box sx={{ display: 'flex', alignItems: 'center', border: '3px solid #1DA1F2', borderRadius: '8px', p: 1, m:"20px",background:"#fafafa", boxShadow: "0 4px 10px rgba(0,0,0,0.3)" }}>
+        <Box sx={{ display: 'flex', alignItems: 'center', border: '3px solid #1DA1F2', borderRadius: '8px', p: 1, m:"20px",background:"#fafafa", boxShadow: "0 0 10px #1DA1F2" }}>
           <InputBase
             sx={{ ml: 2, flex: 1, color: "#000",  }}
             placeholder="Search"

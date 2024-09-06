@@ -52,7 +52,6 @@ const Signup = () => {
     setTimeout(() => {
 
       setUser(values);
-      console.log(values);
       setLoading(false);
       resetForm();
       alert("Login Details is submitted");
@@ -68,7 +67,7 @@ const Signup = () => {
         // backgroundColor: "hsla(240, 7%, 17%, 0.647)",
         borderRadius: "8px",
         padding: "40px 20px",
-        boxShadow: "0 4px 8px rgba(0,0,0,0.3)"
+        boxShadow: "0 0 10px #1DA1F2"
       }}
     >
       <Typography
@@ -393,7 +392,7 @@ const Signup = () => {
                 type="submit"
                 variant="contained"
                 // sx={{ color: "#ffeba7" }}
-                sx={{ color: "#ffffff", backgroundColor: "#1DA1F2" }} 
+                sx={{ color: "#ffffff", backgroundColor: "#1DA1F2" , boxShadow: "0 0 10px #1DA1F2"}} 
                 disabled={loading} // Disable button when loading
               >
                 {loading ? "Creating..." : "Create New User"}

@@ -6,6 +6,8 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 import { useContext, useState } from "react";
 import { PostContext } from "./PostContext";
 import { useNavigate } from "react-router-dom";
+import PhotoCameraOutlinedIcon from '@mui/icons-material/PhotoCameraOutlined';
+
 
 // Initial values
 
@@ -33,7 +35,11 @@ const CreatePost = () => {
   const handleFormSubmit = ( values, { resetForm }) => {
     setLoading(true);
     setTimeout(() => {
-      setPosts((prevPosts) => [values, ...prevPosts ]);
+      const newPost = {
+        ...values,
+        id: Date.now(),  // Assign a unique ID to each post
+      };
+      setPosts((prevPosts) => [newPost, ...prevPosts ]);
       setLoading(false);
       resetForm();
       alert("Your Post Details is submitted");
@@ -48,7 +54,7 @@ const CreatePost = () => {
         backgroundColor: "#fafafa",
         borderRadius: "8px",
         padding: "20px",
-        boxShadow: "0 4px 8px rgba(0,0,0,0.3)"
+        boxShadow: "0 0 10px #1DA1F2"
       }}
     >
       <Typography
@@ -76,6 +82,7 @@ const CreatePost = () => {
         handleSubmit,
         handleBlur,
         handleChange,
+        setFieldValue,
         resetForm,
 
       }) => (
@@ -190,7 +197,7 @@ const CreatePost = () => {
 
             <Box
               sx={{
-                gridColumn: "span 2",
+                gridColumn: "span 4",
                 display: "flex",
                 alignItems: "center",
               }}
@@ -217,7 +224,55 @@ const CreatePost = () => {
               />
             </Box>
 
-            <Box display="flex" justifyContent="end" mt="20px">
+            <Box
+            sx={{
+              gridColumn: "span 4",
+              display: "flex",
+              alignItems: "center",
+              backgroundColor: "#f0f2f5", // Light Grey
+              borderRadius: "8px",
+              padding: "10px",
+            }}
+            >
+              <PhotoCameraOutlinedIcon 
+                style={{ color: "#1DA1F2", marginRight: "8px" }}
+                />
+                <input 
+                 accept="image/*"
+                 style={{ display: "none" }}
+                 id="upload-post-picture"
+                 type="file"
+                 onChange={ (event) =>{ 
+                  const file = event.currentTarget.files[0];
+                  const reader = new FileReader();
+
+                  reader.onloadend = () =>{
+                    setFieldValue("postPicture", reader.result);
+                  }
+
+                  if(file) {
+                    reader.readAsDataURL(file);
+                  }
+                  }}
+                 />
+                 <label
+                 htmlFor="upload-post-picture" 
+                 >
+                   <Box
+                   type="submit"
+                   variant="contained"
+                   color="primary"
+                   sx={{ color: "#ffffff", backgroundColor: "#1DA1F2" }} 
+                   component="span"
+                  >
+                    Upload Photo
+                  </Box>
+                 </label>
+
+            </Box>
+
+          </Box>
+          <Box display="flex" justifyContent="end" mt="20px">
               <Button
               type="submit"
               variant="contained"
@@ -228,8 +283,6 @@ const CreatePost = () => {
               disabled={loading}
               >{loading ? "Creating..." : "Create New Post"}</Button>
             </Box>
-            
-          </Box>
         </form>
        )}
       </Formik>

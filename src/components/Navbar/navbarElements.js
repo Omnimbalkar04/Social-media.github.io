@@ -14,7 +14,7 @@ export const Nav = styled.nav`
   justify-content: space-between;
   padding: 0.2rem calc((100vw - 1000px) / 2);
   z-index: 12;
-  boxShadow: "0 4px 10px rgba(0,0,0,0.2)";
+  boxShadow: 0 4px 10px rgba(0,0,0,1);
 
   position: relative;
 `;
